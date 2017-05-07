@@ -1,27 +1,31 @@
-* 0:What is this
+# 0:What is this
 
 This sorce is deep lerning program with Keras and TensorFlow.
 We can use Resnet, Inception, Xception architecture.
 
 And also VGG16, VGG19 are not working Raspberry Pi2B.
 
-* 1:You may need modules install
+# 1:You may need modules install
 
+    ~~~~
     pip install numpy
     pip install cython
     pip install scipy
     pip install h5py
     pip install pillow
     pip install keras
+    ~~~~
 
-* 2:After that you need install tenforflow
+# 2:After that you need install tenforflow
 
+    ~~~~
     https://github.com/samjabrahams/tensorflow-on-raspberry-pi
+    ~~~~
  
-* 3:make sure Versions
+# 3:make sure Versions
 
+    ~~~~
     >pip list
-
     click (6.7)
     Cython (0.25.2)
     Flask (0.12.1)
@@ -46,3 +50,5 @@ And also VGG16, VGG19 are not working Raspberry Pi2B.
     Theano (0.9.0)
     Werkzeug (0.12.1)
     wheel (0.29.0)
+    ~~~~
+
