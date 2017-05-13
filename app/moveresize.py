@@ -6,4 +6,14 @@ outpath =  "/home/pi/ikinari-ai/static/img/"
 files = glob.glob(outpath+'*.jpg')
 outfile = outpath+'img'+'%d'%(len(files))+'.jpg'
 print 'moveresize to:'+outfile
-Image.open(infile).resize((480,360)).crop((80,20,400,340)).save(outfile)
+img = Image.open(infile).resize((600,400))
+half_the_width = img.size[0] / 2
+half_the_height = img.size[1] / 2
+img.crop(
+    (
+        half_the_width - 160,
+        half_the_height - 160,
+        half_the_width + 160,
+        half_the_height + 160
+    )
+).save(outfile)

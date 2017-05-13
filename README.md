@@ -3,7 +3,9 @@
 This sorce is deep lerning program with Keras and TensorFlow.
 We can use Resnet, Inception, Xception architecture.
 
-And also VGG16, VGG19 are not working Raspberry Pi2B.
+Currently VGG16, VGG19 are memory allocation error on Raspberry Pi2B.
+
+You can run > sh ./capture.sh
 
 # 1:You may need modules install
 
