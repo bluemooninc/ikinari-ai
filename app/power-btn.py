@@ -61,6 +61,8 @@ def hello():
     sleep(1)
     proc = subprocess.Popen('sudo python /home/pi/ikinari-ai/lcd.py',shell=True,stdin=subprocess.PIPE,
         stdout=subprocess.PIPE)
+    proc = subprocess.Popen('python /home/pi/ikinari-ai/espeak.py',shell=True,stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE)
 
 def message(msg):
     proc = subprocess.Popen('sudo python /home/pi/ikinari-ai/lcd.py '+msg,shell=True,stdin=subprocess.PIPE,
@@ -92,8 +94,8 @@ def Input_2(channel):
     print(sw_counter)
 
 
-# Wait for Button 1 to be pressed, run the function in "callback" when it does, also software debounce for 300 ms to avoid triggering it multiple times a second
-GPIO.add_event_detect(BUTTON_2, GPIO.BOTH, callback=Input_2, bouncetime=300) # Wait for Button 2 to be pressed
+# Wait for Button 1 to be pressed, run the function in "callback" when it does, also software debounce for 600 ms to avoid triggering it multiple times a second
+GPIO.add_event_detect(BUTTON_2, GPIO.BOTH, callback=Input_2, bouncetime=600) # Wait for Button 2 to be pressed
 while True:
     sleep(1)
 

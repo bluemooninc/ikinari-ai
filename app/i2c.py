@@ -1,7 +1,11 @@
 import smbus2
 import time
+import sys
 #for RPI ver1, use "bus=smbus.SMBus(0)"
 bus=smbus2.SMBus(1)
+
+argvs = sys.argv
+argc = len(argvs)
 
 # timeout variable can be omitted, if you use specific value in the while condition
 timeout = 30   # [seconds]
@@ -38,5 +42,9 @@ def main():
         print "Stop "
  
 if __name__ == '__main__':
-        main() #! /usr/bin/env /usr/bin/python
+  if (argc == 2 and argvs[1]=='stop'):
+      writeNumber(2)
+  else:
+      main() #! /usr/bin/env /usr/bin/python
  
+
