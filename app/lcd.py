@@ -33,14 +33,10 @@ def load_text():
   str = f.read()
   arr = split_str(str, 32)
   f.close
-  for line in arr:
-    time.sleep(3)
-    line1 = line[0:15]
-    line2 = line[16:31]
-    to_lcd(line1,line2) 
   line1=arr[0][0:15]
   line2=arr[0][16:31]
   to_lcd(line1,line2)
+  time.sleep(3)
 
 def show_ip():
   cmd = 'ifconfig | grep inet | grep -v "127" | cut --delimiter ":" -f 2 | sed -e "s/ .*//"'
@@ -57,8 +53,12 @@ if (argc == 2):
   lcd.lcd_puts(" " * 16,2)
   lcd.lcd_puts(argvs[1],1)
 else:
-  show_ip()
+  lcd.lcd_puts(" " * 16,1)
+  lcd.lcd_puts(" " * 16,2)
   load_text()
+  lcd.lcd_puts(" " * 16,1)
+  lcd.lcd_puts(" " * 16,2)
+  show_ip()
 
 ##lcd.lcd_clear()
 
