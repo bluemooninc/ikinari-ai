@@ -1,8 +1,9 @@
 ![img_20171010_084322](https://user-images.githubusercontent.com/1677443/31363247-161076e8-ad98-11e7-838e-0da55427315a.jpg)
 
-# 0:What is this
+# Raspberry Pi / AI Robot project
 
-Arduino and Raspberry i2c communicate robot.
+This project using Raspberry and Arduino Ai robot project.
+We can learn about how to build a robot.
 This sorce is deep lerning program with Keras and TensorFlow.
 We can use Resnet, Inception, Xception architecture.
 
