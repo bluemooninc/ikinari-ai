@@ -1,14 +1,11 @@
 ![img_20171010_084322](https://user-images.githubusercontent.com/1677443/31363247-161076e8-ad98-11e7-838e-0da55427315a.jpg)
 
-# 0:What is this
+# Raspberry Pi / AI Robot project
 
-Arduino and Raspberry i2c communicate robot.
-This sorce is deep lerning program with Keras and TensorFlow.
-We can use Resnet, Inception, Xception architecture.
+This project using Raspberry and Arduino Ai robot project.
+We can learn about how to build a robot with open sources.
 
-Currently VGG16, VGG19 are memory allocation error on Raspberry Pi2B.
-
-You can run > sh ./capture.sh
+This project using Keras,TensorFlow and cv2 for real time facial segmention.
 
 # 1:You may need modules install
 
