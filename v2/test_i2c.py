@@ -18,8 +18,8 @@ def loop():
     print "Return: "+str(value)
     ## send DC on
     time.sleep(WAIT_TIME)
-    bus.write_byte(I2C_ADDRESS, 6)
-    time.sleep(0.2)
+    bus.write_byte(I2C_ADDRESS, 253)
+    time.sleep(1)
 
     t=threading.Timer(WAIT_TIME, loop)
     t.start()

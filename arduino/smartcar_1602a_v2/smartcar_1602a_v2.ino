@@ -19,7 +19,7 @@
 #define RIGHT_BACKWARD 5
 
 #define RIGHT_PWM A3 // Speed controll
-#define CLEANNER_ON 11 // Cleanner Switch
+#define CLEANNER_ON 8 // Cleanner Switch
 #define UNDER_TRIG_PIN 12
 #define UNDER_ECHO_PIN 13
 
@@ -96,7 +96,6 @@ void turnRight(int wait){
   digitalWrite(RIGHT_FORWARD,HIGH);
   digitalWrite(LEFT_BACKWARD,HIGH);
   digitalWrite(RIGHT_BACKWARD,LOW);
-  digitalWrite(CLEANNER_ON,HIGH);
   delay(wait);
   stopMotor();
 }
@@ -106,7 +105,6 @@ void turnLeft(int wait){
   digitalWrite(RIGHT_FORWARD,LOW);
   digitalWrite(LEFT_BACKWARD,LOW);
   digitalWrite(RIGHT_BACKWARD,HIGH);
-  digitalWrite(CLEANNER_ON,HIGH);
   delay(wait);
   stopMotor();
 }
@@ -125,7 +123,6 @@ void stopMotor(){
   digitalWrite(RIGHT_FORWARD,LOW);
   digitalWrite(LEFT_BACKWARD,LOW);
   digitalWrite(RIGHT_BACKWARD,LOW);
-  digitalWrite(CLEANNER_ON,LOW);
 }
 
 void debugDist(int d){
@@ -217,6 +214,12 @@ void do_command(){
   if (wire_val==255){
     stopMotor();
     debugDist(distance);
+  }else if (wire_val==254){
+    Serial.println("Cleaner ON");
+    digitalWrite(CLEANNER_ON,HIGH);
+  }else if (wire_val==253){
+    Serial.println("Cleaner OFF");
+    digitalWrite(CLEANNER_ON,LOW);
   }else if (wire_val==4){
     Serial.println("DC 4 to 6 o'clock");
     turnLeft(200);

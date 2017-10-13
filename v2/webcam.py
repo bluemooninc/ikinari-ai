@@ -47,6 +47,7 @@ def showScreenAndDectect(capture):
     while (True):
         ## 秒数上限で処理終了
         if (time.time()-t1>180):
+            i2c.cleanner(0)
             lcd.lcd_string("Time up!Push BTN",2)
             break
         flag, frame = capture.read()
@@ -57,7 +58,7 @@ def showScreenAndDectect(capture):
             ## イメージを取得
             face_img = fdu.preprocess(frame, faceCoordinates, face_shape=FACE_SHAPE)
             #cv2.imshow(windowsName, face_img)
-            ## save image file
+            ## 画像を保存
             fname = "/home/pi/Pictures/face"+dt.now().strftime('%Y%m%d%H%M%S')+".jpg"
             cv2.imwrite(fname, face_img)
 
@@ -66,13 +67,21 @@ def showScreenAndDectect(capture):
             ## TensorFlowで表情を解析する
             result = model.predict(input_img)[0]
             index = np.argmax(result)
-            print (emo[index], 'prob:', max(result))
+            prob = int(max(result)*100)
+            ## 40%以上の判定ならクリーナー駆動
+            if (prob>40):
+                cleanner = 'On'
+                i2c.cleanner(1)
+            else:
+                cleanner = ''
+            print (emo[index], 'prob:', str(prob)+'%', cleanner)
             dist = i2c.get_distance()
-            lcd.lcd_string(emo[index]+':'+str(max(result)), 1)
+            lcd.lcd_string(emo[index]+':'+str(prob)+'% '+cleanner, 1)
             lcd.lcd_string(str(i)+':'+str(dist)+'cm', 2)
             ## Move except Angry
             fname = "/home/pi/Pictures/face/"+emo[index]+dt.now().strftime('%Y%m%d%H%M%S')+".jpg"
             cv2.imwrite(fname, face_img)
+            ## angry 以外ならDCモーター駆動
             if (index>=1 and index<=5):
                 i2c.move_dc(i)
                 if (i==9 or i==15):
@@ -95,6 +104,7 @@ def showScreenAndDectect(capture):
             if (i<15):
                 i += 1
             else:
+                i2c.cleanner(0)
                 i = 9
 
 def getCameraStreaming():
