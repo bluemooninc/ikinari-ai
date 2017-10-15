@@ -5,13 +5,16 @@
 This project using Raspberry and Arduino Ai robot project.
 We can learn about how to build a robot with open sources.
 
+```
  1:How to connect Raspberry Pi and Arduino whitch using I2C protcol.
  2:How to connect 1602A serial LCD from Raspberry Pi.
  3:How to control Single DC motor with TIP120 transistor and Power.
  4:How to control Dual DC motor with L298 Motor Driver Module.
  5:How to control SG90 Survo motor.
  6:How to connect HC-SR04 Ultrasonic Sensor.
-This project using Keras,TensorFlow and cv2 for real time facial segmention.
+ 7:How to connect USB WebCam and realtime capture from Raspberry Pi.
+ 8:How to processing real time face segmentation using Keras, TensorFlow and OpenCV2.
+```
 
 # 1:You may need modules install
 
