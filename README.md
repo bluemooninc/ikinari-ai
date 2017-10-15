@@ -1,5 +1,7 @@
 ![img_20171010_084322](https://user-images.githubusercontent.com/1677443/31363247-161076e8-ad98-11e7-838e-0da55427315a.jpg)
 
+日本語 Japanese Document here.(https://github.com/bluemooninc/ikinari-ai/wiki)
+
 # Raspberry Pi / AI Robot project
 
 This project using Raspberry and Arduino Ai robot project.
