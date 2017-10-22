@@ -45,7 +45,7 @@ int rightDistance = 0;
 Servo myServo;  
 char dist[3];
 char rot[3];
-int adjust = -15;
+int adjust = 0;
 String output = "";
 int search_wait = 250;
 int see_left_dig = 120;

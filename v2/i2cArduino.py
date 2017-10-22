@@ -21,13 +21,7 @@ class i2c:
     val = self.bus.read_byte(self.arduino_addr)
     time.sleep(0.2)
     return val
-
-  def cleanner(self, sw):
-    if (sw==1):
-      self.writeNumber(254)
-    else:
-      self.writeNumber(253)
-
+ 
   def move_dc(self, i):
     ## send command 1 get angle
     ## writeNumber(1)
