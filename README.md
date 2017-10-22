@@ -1,11 +1,22 @@
 ![img_20171010_084322](https://user-images.githubusercontent.com/1677443/31363247-161076e8-ad98-11e7-838e-0da55427315a.jpg)
 
+日本語の解説はこちら＞(https://github.com/bluemooninc/ikinari-ai/wiki)
+
 # Raspberry Pi / AI Robot project
 
 This project using Raspberry and Arduino Ai robot project.
 We can learn about how to build a robot with open sources.
 
-This project using Keras,TensorFlow and cv2 for real time facial segmention.
+```
+ 1:How to connect Raspberry Pi and Arduino whitch using I2C protcol.
+ 2:How to connect 1602A serial LCD from Raspberry Pi.
+ 3:How to control Single DC motor with TIP120 transistor and Power.
+ 4:How to control Dual DC motor with L298 Motor Driver Module.
+ 5:How to control SG90 Survo motor.
+ 6:How to connect HC-SR04 Ultrasonic Sensor.
+ 7:How to connect USB WebCam and realtime capture from Raspberry Pi.
+ 8:How to processing real time face segmentation using Keras, TensorFlow and OpenCV2.
+```
 
 # 1:You may need modules install
 
