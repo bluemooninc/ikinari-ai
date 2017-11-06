@@ -2,6 +2,8 @@
 
 日本語の解説はこちら＞(https://github.com/bluemooninc/ikinari-ai/wiki)
 
+リアルタイム・動体検知撮影ができるカメラを搭載し、スマホによる遠隔操作が可能で動体検知時に様々なアクションを起こす事ができるAiロボットです。
+
 TensorFlow を中心に Keras フレームワークを使用して、IoTデバイスを制御する仕組みを研究する為のロボットです。ハードウェアは Raspberry Pi / Arduino を中心に シリアル通信デバイス、DCモーター、サーボモーターを制御できます。サンプルプログラムでは、人の顔の表情を解析して追いかけます。
 
 # Raspberry Pi / AI Robot project
